@@ -1,0 +1,243 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background: var(--020-a-18, #020a18);
+}
+
+.center {
+  padding-left: calc(50% - 573px);
+  padding-right: calc(50% - 573px);
+}
+.flex {
+  display: flex;
+  justify-content: space-between;
+}
+a {
+  text-decoration: none;
+}
+.fa-solid {
+  padding-right: 10px;
+}
+.fa-brands {
+  padding-right: 24px;
+  opacity: 0.7;
+}
+
+.header {
+  padding-top: 39px;
+  padding-bottom: 39px;
+  display: flex;
+  justify-content: center;
+  gap: 32px;
+}
+.header__link {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: normal;
+  color: #fff;
+}
+
+.top {
+  padding-top: 160px;
+  padding-bottom: 256px;
+}
+.top__content {
+  margin-bottom: 304px;
+  display: flex;
+  gap: 128px;
+}
+.top__slogan {
+  color: var(--3-a-68-b-8, #3a68b8);
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 160%; /* 28.8px */
+  text-transform: uppercase;
+}
+.top__headding {
+  width: 604px;
+  margin-top: 10px;
+  margin-bottom: 40px;
+  color: var(--ffffff, #fff);
+  font-size: 55px;
+  font-weight: 800;
+  line-height: 130%; /* 71.5px */
+}
+.top__text {
+  width: 558px;
+  color: var(--ffffff, #fff);
+  opacity: 0.7;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 160%; /* 28.8px */
+}
+.top__btn {
+  margin-top: 65px;
+  display: flex;
+  gap: 20px;
+}
+.buttons {
+  border-radius: 5px;
+  border: none;
+  background: var(--3-a-68-b-8, #3a68b8);
+  color: var(--ffffff, #fff);
+  font-size: 20px;
+  font-weight: 600;
+  line-height: normal;
+  padding: 1rem 2rem;
+  text-transform: capitalize;
+  position: relative;
+}
+
+.about {
+  padding-bottom: 264px;
+}
+.about__right {
+  padding-top: 110px;
+  max-width: 44%;
+}
+.about__headding {
+  color: var(--ffffff, #fff);
+  font-size: 40px;
+  font-weight: 700;
+  line-height: 130%; /* 52px */
+}
+.about-padding {
+  padding-top: 30px;
+  padding-bottom: 50px;
+}
+.about__text {
+  width: 460px;
+  color: var(--ffffff, #fff);
+  font-size: 16px;
+  opacity: 0.7;
+  font-weight: 600;
+  line-height: 160%; /* 25.6px */
+}
+
+.cards {
+  gap: 30px;
+  padding-bottom: 243px;
+  display: grid;
+  grid-template: 1fr 1fr 1fr/1fr 1fr 1fr;
+}
+.card {
+  border-radius: 10px;
+  backdrop-filter: blur(100px);
+  text-align: center;
+  padding: 30px;
+  position: relative;
+}
+.bgcard {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.1;
+  background-image: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) -41.9%,
+    #fff 115.68%
+  );
+}
+.card1 {
+  order: 3;
+  grid-area: 2/1/4/3;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 30px;
+}
+.card1__img {
+  width: 306px;
+}
+.card__headding {
+  padding-top: 30px;
+  padding-bottom: 30px;
+  color: var(--ffffff, #fff);
+  text-align: center;
+  font-size: 25px;
+  font-weight: 700;
+  line-height: 125%; /* 31.25px */
+}
+.card__text {
+  color: var(--ffffff, #fff);
+  text-align: center;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 160%; /* 25.6px */
+  opacity: 0.7;
+}
+
+.clients-about {
+  padding-bottom: 221px;
+}
+.clients-about__left {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 20px;
+}
+.clients-about__headding {
+  padding-bottom: 20px;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 30px;
+  color: var(--ffffff, #fff);
+  padding-bottom: 48px;
+  padding-top: 48px;
+  font-family: "Roboto";
+  font-weight: 500;
+  line-height: normal;
+  backdrop-filter: blur(100px);
+}
+.footer__box {
+  max-width: 400px;
+}
+.footer__headding {
+  color: var(--ffffff, #fff);
+  font-size: 16px;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 33px;
+}
+.footer__text {
+  color: var(--ffffff, #fff);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: normal;
+  padding-bottom: 24px;
+  position: relative;
+}
+.bgf {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  opacity: 0.05;
+  background: linear-gradient(
+    180deg,
+    rgba(255, 255, 255, 0.2) -41.9%,
+    #fff 260.24%
+  );
+}
+.footer__info {
+  max-width: 273px;
+  font-size: 14px;
+  font-style: italic;
+  font-weight: 100;
+  line-height: normal;
+  opacity: 0.6;
+}
+.last {
+  padding-bottom: 0;
+}
