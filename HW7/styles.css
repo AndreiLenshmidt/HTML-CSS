@@ -10,16 +10,20 @@ body {
 }
 
 .center {
-  padding-left: calc(50% - 570px);
-  padding-right: calc(50% - 570px);
+  padding-left: calc(50% - 554px);
+  padding-right: calc(50% - 554px);
 }
 .flex {
   display: flex;
   justify-content: space-between;
 }
 
-.header {
+.header-wrap {
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: #222222;
+}
+.header {
   align-items: center;
 }
 .fa-header-icons {
@@ -28,15 +32,21 @@ body {
   padding-top: 35px;
   padding-bottom: 35px;
 }
-.main {
+
+.main-wrap {
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: #f1e4e6;
+}
+.main {
   margin-bottom: 65px;
 }
 .main__img {
-  margin-left: -230px;
+  width: 50%;
 }
 .main__right {
-  padding-top: 290px;
+  align-self: center;
+  padding-bottom: 60px;
 }
 .main__headding {
   color: #222;
@@ -59,8 +69,13 @@ body {
 }
 
 .reclame {
+  max-width: 1140px;
+  padding-left: 16px;
+  padding-right: 16px;
+  margin: 0 auto;
   display: grid;
-  grid-template: 260px 180px /1fr 1fr 1fr;
+  grid-template: 13fr 9fr/1fr 1fr 1fr;
+  height: 470px;
   gap: 30px;
   text-align: center;
   margin-bottom: 96px;
@@ -89,6 +104,7 @@ body {
   position: relative;
 }
 .reclame__part4 {
+  box-sizing: content-box;
   grid-column: 1/4;
 }
 .reclame__img {
@@ -102,8 +118,13 @@ body {
 }
 
 .shop {
+  width: 1140px;
+  margin: 0 auto;
   text-align: center;
   padding-bottom: 95px;
+  padding-left: 16px;
+  padding-right: 16px;
+  flex-direction: column;
 }
 .shop__headding {
   color: #222;
@@ -119,14 +140,20 @@ body {
   padding-bottom: 48px;
 }
 .card-box {
+  width: 100%;
+  box-sizing: border-box;
   flex-wrap: wrap;
-  gap: 30px;
-  padding-bottom: 48px;
+  padding-bottom: 18px;
+  justify-content: space-between;
 }
 .card {
-  width: 360px;
+  width: 31%;
   background-color: #f8f8f8;
   position: relative;
+  margin-bottom: 2.2%;
+}
+.card__img {
+  width: 100%;
 }
 .card__headding,
 .card__text,
@@ -192,8 +219,6 @@ body {
 .advantage__box {
   width: 360px;
   text-align: center;
-  padding-left: 2rem;
-  padding-right: 2rem;
 }
 .advantage__headding {
   color: #fbfbfb;
@@ -206,6 +231,8 @@ body {
 .advantage__text {
   color: #fbfbfb;
   text-align: center;
+  padding-left: 2rem;
+  padding-right: 2rem;
   font-size: 14px;
   font-weight: 300;
   line-height: normal;
@@ -222,10 +249,9 @@ body {
   font-size: 20px;
 }
 
-.subscribe {
-  text-align: center;
-  padding-top: 97px;
-  padding-bottom: 156px;
+.subscribe-wrap {
+  padding-left: 16px;
+  padding-right: 16px;
   background-color: #f4f4f4b2;
   background-image: url(img/suscribe-bkg.jpg);
   background-repeat: no-repeat;
@@ -239,6 +265,11 @@ body {
   height: 100%;
   left: 0;
   top: 0;
+}
+.subscribe {
+  text-align: center;
+  padding-top: 97px;
+  padding-bottom: 156px;
 }
 .subscribe__right,
 .subscribe__left {
@@ -323,8 +354,10 @@ body {
   outline: none;
 }
 
-.footer {
+.footer-wrap {
   background-color: #222224;
+  padding-left: 16px;
+  padding-right: 16px;
 }
 .footer__text {
   color: #fbfbfb;
@@ -351,4 +384,90 @@ body {
   background-color: #f16d7f;
   color: #fff;
   cursor: pointer;
+}
+
+@media (max-width: 1024px) {
+  .reclame {
+    height: 400px;
+  }
+  .main__headding {
+    font-size: 44px;
+  }
+  .main__text {
+    font-size: 24px;
+  }
+  .card-box {
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    justify-content: center;
+    gap: 2.0833%;
+  }
+  .card {
+    width: 48.9%;
+    margin-bottom: 2.0833%;
+  }
+  .advantage {
+    flex-direction: column;
+    align-items: center;
+    padding-top: 0;
+    padding-bottom: 64px;
+  }
+  .advantage__box {
+    padding-top: 6.7%;
+  }
+  .subscribe {
+    align-items: center;
+    flex-direction: column;
+  }
+}
+@media (max-width: 768px) {
+  .main {
+    min-height: 363px;
+    justify-content: center;
+  }
+  .main__img {
+    display: none;
+  }
+  .main__headding {
+    font-size: 38px;
+  }
+  .main__text {
+    font-size: 20px;
+  }
+  .reclame {
+    grid-template: 248fr 248fr 248fr 111fr/344px;
+    height: 954px;
+    justify-content: center;
+  }
+  .reclame__text4 {
+    padding-top: 10%;
+  }
+  .reclame__part4 {
+    grid-column: 1/1;
+  }
+  .card-box {
+    flex-wrap: wrap;
+    padding-bottom: 18px;
+    justify-content: center;
+    gap: 2.0833%;
+  }
+  .card {
+    width: 91.4666%;
+    margin-bottom: 2.0833%;
+  }
+  .subscribe__left__text {
+    font-size: 18px;
+  }
+  .subscribe__right__text {
+    font-size: 14px;
+  }
+  .form__input {
+    width: 63.3666%;
+  }
+  .form__btn {
+    width: 28.1%;
+  }
+  .footer__text {
+    padding-left: 0;
+  }
 }
