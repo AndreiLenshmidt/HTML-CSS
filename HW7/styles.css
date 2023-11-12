@@ -41,8 +41,11 @@ body {
 .main {
   margin-bottom: 65px;
 }
-.main__img {
+.main__figure {
   width: 50%;
+}
+.main__img {
+  width: 100%;
 }
 .main__right {
   align-self: center;
