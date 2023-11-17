@@ -1,3 +1,12 @@
+@keyframes scale-btn {
+  0% {
+    transform: scale(1, 1);
+  }
+  100% {
+    transform: scale(0.95, 0.95);
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -26,11 +35,80 @@ body {
 .header {
   align-items: center;
 }
+.main-page-link {
+  display: block;
+  width: 44px;
+  height: 38px;
+  padding: 17px;
+  align-self: center;
+}
+.main-page-img {
+  width: 44px;
+  height: 38px;
+}
 .fa-header-icons {
   color: #e8e8e8;
-  padding-left: 35px;
-  padding-top: 35px;
+  padding-left: 18px;
+  padding-right: 18px;
+  padding-top: 36px;
   padding-bottom: 35px;
+  transition: color 0.3s;
+}
+.fa-header-icons:hover {
+  cursor: pointer;
+  color: #f16d7f;
+}
+.fa-header-icons:active {
+  cursor: pointer;
+  color: #fff;
+}
+.menu {
+  display: none;
+}
+.fa-bars {
+  position: relative;
+  display: block;
+}
+.fa-bars:hover .menu {
+  position: absolute;
+  display: block;
+  width: 305px;
+  top: 50px;
+  left: 30px;
+  flex-direction: column;
+}
+.menu {
+  list-style: none;
+}
+.menu__item {
+  padding-bottom: 1rem;
+  width: 150px;
+  transition: all 0.3s;
+}
+.menu__item:first-child {
+  padding-top: 25px;
+}
+.menu__link:hover {
+  color: #222222;
+  font-weight: bold;
+  border-color: #222222;
+}
+.menu__item:hover .menu__link::before {
+  content: "> ";
+}
+.menu__item:hover .menu__link::after {
+  content: " <";
+}
+.menu__link {
+  color: #f16d7f;
+  text-align: center;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: normal;
+  border-left: 1px solid #f16d7f;
+  padding-left: 10px;
+  border-right: 1px solid #f16d7f;
+  padding-right: 10px;
 }
 
 .main-wrap {
@@ -50,6 +128,7 @@ body {
 .main__right {
   align-self: center;
   padding-bottom: 60px;
+  max-width: 402px;
 }
 .main__headding {
   color: #222;
@@ -86,7 +165,6 @@ body {
 .reclame__text {
   color: #fff;
   text-align: center;
-  font-family: "Lato";
   font-size: 16px;
   font-weight: 400;
   line-height: normal;
@@ -152,8 +230,10 @@ body {
 .card {
   width: 31%;
   background-color: #f8f8f8;
-  position: relative;
   margin-bottom: 2.2%;
+}
+.img-box {
+  position: relative;
 }
 .card__img {
   width: 100%;
@@ -188,15 +268,45 @@ body {
   line-height: normal;
 }
 .card__hover {
-  opacity: 0%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   position: absolute;
   width: 100%;
-  height: 420px;
+  height: 100%;
   top: 0;
   left: 0;
+  background-color: #3a3838db;
+  z-index: -1;
 }
-.card__hover:hover {
-  opacity: 100%;
+.add-to-cart {
+  color: #fff;
+  font-family: "Lato";
+  font-size: 14px;
+  font-weight: 400;
+  line-height: normal;
+  background-color: transparent;
+  outline: none;
+  padding: 0.8rem;
+  border: 1px solid #fff;
+  transition: color, border 0.3s;
+}
+.add-to-cart:hover {
+  color: #f16d7f;
+  border: 1px solid #f16d7f;
+  cursor: pointer;
+  transition: all 0.1s;
+}
+.add-to-cart:active {
+  background-color: #f26376;
+  color: #fff;
+  animation: scale-btn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+}
+.fa-cart-shopping {
+  padding-right: 1rem;
+}
+.img-box:hover .card__hover {
+  z-index: 1;
   cursor: pointer;
 }
 .show-all {
@@ -207,11 +317,15 @@ body {
   padding: 1rem 2rem;
   background-color: #fff;
   border: 1px solid #f26376;
+  transition: all 0.3s;
 }
 .show-all:hover {
   cursor: pointer;
   background-color: #f16d7f;
   color: #fff;
+}
+.show-all:active {
+  animation: scale-btn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
 }
 
 .advantage {
@@ -256,7 +370,7 @@ body {
   padding-left: 16px;
   padding-right: 16px;
   background-color: #f4f4f4b2;
-  background-image: url(img/suscribe-bkg.jpg);
+  background-image: url(img/suscribe-bkg.webp);
   background-repeat: no-repeat;
   background-size: cover;
   position: relative;
@@ -323,6 +437,7 @@ body {
   background-color: #f16d7f;
   box-sizing: border-box;
   border: none;
+  transition: all 0.3s;
 }
 .form__btn:hover {
   color: #f16d7f;
@@ -330,6 +445,10 @@ body {
   border: 1px solid #f16d7f;
   box-sizing: border-box;
   cursor: pointer;
+}
+.form__btn:active {
+  animation: scale-btn 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94) both;
+  box-shadow: 0px 0px 2px 2px #f16d7f;
 }
 .form__input {
   width: 256px;
@@ -382,10 +501,16 @@ body {
   padding-top: 15px;
   display: block;
   border-radius: 2px;
+  transition: all 0.3s;
 }
 .fa-brands:hover {
   background-color: #f16d7f;
   color: #fff;
+  cursor: pointer;
+}
+.fa-brands:active {
+  color: #f16d7f;
+  background-color: #fff;
   cursor: pointer;
 }
 
@@ -427,6 +552,9 @@ body {
   .main {
     min-height: 363px;
     justify-content: center;
+  }
+  .main__figure {
+    display: none;
   }
   .main__img {
     display: none;
